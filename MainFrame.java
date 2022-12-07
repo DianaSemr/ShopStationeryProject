@@ -12,13 +12,14 @@ import java.net.URL;
 
 public class MainFrame extends Stationery {
     @Override
-    protected void paintStationery(Graphics g) {
+   protected void paintStationery(Graphics g) {
         Graphics2D g1 = (Graphics2D) g;
         g1.setBackground(Color.BLACK);
         try {
             URL url = new URL("https://img.freepik.com/free-photo/boxes-with-gifts-christmas-decorations-blue-surface_127032-2004.jpg?w=996&t=st=1670335922~exp=1670336522~hmac=1e26e0ccb14772b6359335486c396b43536f1dfdb180772b575e00ffe490dd87");
             BufferedImage img = ImageIO.read(url);
-            g1.drawImage(img, 1, 1, this);
+            Image scaleImage = img.getScaledInstance(1030, 800,Image.SCALE_DEFAULT);
+            g1.drawImage(scaleImage, 1, 1, this);
             g1.setPaint(new Color(0xB00606));
             Font newFont = new Font("Serif", Font.ITALIC, 45);
             setFont(newFont);
