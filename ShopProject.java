@@ -12,31 +12,34 @@ import static java.awt.FlowLayout.*;
 public class ShopProject extends JFrame {
     private final JPanel panel1;
     private final JPanel panel2;
-    JPanel panel3;
 
     public ShopProject() {
         super("Shop");
         setLayout(null);
         this.setBackground(new Color(0x05C3FC));
         panel1 = new JPanel(new BorderLayout());
-        panel1.add(new MainFrame());
         panel2 = new JPanel();
-        panel3 = new JPanel();
-        panel3.setSize(100, 100);
-        panel3.setLocation(300, 400);
-        panel1.add(panel3);///
-        pack();
         init();
     }
 
     private void init() {
         add(new Button("Start"));
+        panel2.setLayout(null);
+        JPanel panel3 = new JPanel();
+        panel3.setBounds(0, 35, 125, 800);
+        panel3.setBackground(new Color(0xB6D5E5));
+        add(panel3);
+        JPanel panel4 = new JPanel();
+        panel4.setBounds(1155, 35, 125, 800);
+        panel4.setLayout(null);
+        panel4.setBackground(new Color(0xB6D5E5));
+        add(panel3);
+        add(panel4);
         add(panel1);
         add(panel2);
-        panel2.setLayout(null);
         panel2.setBackground(new Color(0xE5E5F6));
-        panel2.setBounds(0,0,1500,35);
-        panel1.setBounds(125, 35, 1500, 800);
+        panel2.setBounds(0,0,1280,35);
+        panel1.setBounds(125, 35, 1030, 800);
         setSize(1500, 800);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -52,7 +55,7 @@ public class ShopProject extends JFrame {
         for (Stationery st : k) {
             JButton button = new JButton(st.getButtonName());
             button.setSize(90, 35);
-            button.setLocation(l * 100 + 10, 0);
+            button.setLocation(l * 105 + 10, 0);
             button.setBorderPainted(false);
             button.setContentAreaFilled(false);
             button.setFocusPainted(false);
