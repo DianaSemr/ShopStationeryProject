@@ -33,7 +33,7 @@ public class ShopProject extends JFrame {
         panel4.setBounds(1155, 35, 125, 800);
         panel4.setLayout(null);
         panel4.setBackground(new Color(0xB6D5E5));
-        add(panel3);
+        add(panel3);//
         add(panel4);
         add(panel1);
         add(panel2);
