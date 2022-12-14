@@ -39,6 +39,7 @@ public class ShopProject extends JFrame {//implements MenuListener
         double width = getWidth();
         double height = getHeight();
 
+
         panel1.setSize(getWidth(), 500);
         panel1.setLocation(0, 0);
         panel2.setSize(100, getHeight() - 500);
@@ -72,6 +73,7 @@ public class ShopProject extends JFrame {//implements MenuListener
         panel4.setLocation(1150, 35);
         panel4.setBackground(new Color(0xC6F1FF));
         add(panel4);
+
         //pack();
         init();
     }
@@ -90,7 +92,7 @@ public class ShopProject extends JFrame {//implements MenuListener
         button.setIcon(new ImageIcon(scaleImage));
         panel1.add(button);
         button.addActionListener(new Action2());
-
+        JFrame g = this;////
         panel2.setBackground(new Color(0xE5E5F6));
         panel2.setBounds(0,0,1500,35);
         panel1.setBounds(125, 35, 1025, 800);
@@ -260,26 +262,14 @@ public class ShopProject extends JFrame {//implements MenuListener
 
        @Override
        public void actionPerformed(ActionEvent e) {
-           //paint(new MainFrame1());
-           remove(currentPanel);
-           /*
-           if (e.getSource().equals()) {
-               this.getContentPane().add(panel1, BorderLayout.CENTER);
-               currentPanel = panel1;
-           }
-           else {
-               if (e.getSource().equals(button2)) {
-                   this.getContentPane().add(panel2, BorderLayout.CENTER);
-                   currentPanel = panel2;
-               }
-               else {*/
-                   add(new MainFrame2(), BorderLayout.CENTER);
-                   currentPanel = new MainFrame2();
-               //}
-           //}
-
-           currentPanel.revalidate();
-          // this.repaint();
+           //paint(new MainFrame1()); // отрисовка
+           //remove(currentPanel)// замена панели
+            panel1.removeAll();
+            //panel1 = new MainFrame2();
+            panel1.setLayout(new BorderLayout());
+            panel1.add(new MainFrame2());
+            panel1.revalidate();
+            panel1.repaint();
 
        }
    }
