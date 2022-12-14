@@ -26,7 +26,7 @@ public class Buttons extends JPanel{
         JMenuBar menu = new JMenuBar();
 
         menu.setMaximumSize(new Dimension(width, 200));
-
+/*
         // связываем кнопки с обработчиком
         MainFrame.addMenuListener(frame);
         Pens.addMenuListener(frame);
@@ -58,4 +58,6 @@ public class Buttons extends JPanel{
         setVisible(true);
 
     }
-}
+    */
+
+}}

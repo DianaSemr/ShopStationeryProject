@@ -8,16 +8,19 @@ import javax.swing.event.MenuListener;
 import java.awt.event.*;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import static java.awt.FlowLayout.*;
 
-public class ShopProject extends JFrame implements MenuListener {
-    //private final JPanel panel1;
-    //private final JPanel panel2 = new JPanel(); // панель для кнопок
+public class ShopProject extends JFrame {//implements MenuListener
+    private JPanel panel1;
+    private JPanel currentPanel = panel1; // панель, которую мы будем менять при нажатии на кнопку
+    private JPanel panel2; // панель для кнопок
 
-    //JPanel panel3;
-
+    JPanel panel3;
+    /*
     JPanel panel = new JPanel();     // общая панель для всего фрейма
 
     int height = Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -25,66 +28,80 @@ public class ShopProject extends JFrame implements MenuListener {
     Buttons buttons = new Buttons(width, 50, this); // класс для кнопок
 
     Basic basic = new Basic(width, height - 50, "MainFrame"); // класс для основного экрана
-
-    public ShopProject() {
+*/
+    public ShopProject() throws IOException {
         super("Shop");
-        //setLayout(null);
+        setLayout(null);
 
-        /*panel1 = new JPanel();
+        panel1 = new JPanel();
         panel2 = new JPanel();
         panel3 = new JPanel();
         double width = getWidth();
-        double height = getHeight();*/
+        double height = getHeight();
 
-        /*panel1.setSize(getWidth(), 500);
-        panel1.setLocation(0,0);
+        panel1.setSize(getWidth(), 500);
+        panel1.setLocation(0, 0);
         panel2.setSize(100, getHeight() - 500);
         panel2.setLocation(0, 500);
-        pack();
-        init();*/
+        //JScrollPane scrPane = new JScrollPane(panel1); Прокрутка
+        //add(scrPane);
+        //pack();
+        //init();
 
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
+        // panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        /*panel.setLayout(null);
         panel.add(buttons);
         panel.add(basic);
 
         getContentPane().add(panel);
-
+*/
         setSize(1500, 800);
-        /*this.setBackground(new Color(0x05C3FC));
-        panel1 = new JPanel(new BorderLayout());
-        panel1.add(new MainFrame());
-        panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS)); /// обавила то что в скобках
+        //this.setBackground(new Color(0x05C3FC));
+        panel1 = new JPanel();
+        panel1.setLayout(null);
+        //panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS)); /// добавила то что в скобках
         panel3 = new JPanel();
-        panel3.setSize(100, 100);
-        panel3.setLocation(300, 400);
-        panel1.add(panel3);///
+        panel3.setSize(125, 800);
+        panel3.setLocation(0, 35);
+        panel3.setBackground(new Color(0xC6F1FF));
+        add(panel3);
+        panel1.setBackground(Color.WHITE);
 
-
-        pack();
-        init();*/
-
+        JPanel panel4 = new JPanel();
+        panel4.setSize(125, 800);
+        panel4.setLocation(1150, 35);
+        panel4.setBackground(new Color(0xC6F1FF));
+        add(panel4);
+        //pack();
+        init();
     }
-
-    /*private void init() {
-        add(new Button("Start"));
+    private void init() throws IOException {
         add(panel1);
         add(panel2);
 
+        panel2.setLayout(null);
 
+        JButton button = new JButton();// Добавляю кнопку для "акций"
+        button.setSize(750, 350);
+        button.setLocation(15 , 10);
+        URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
+        BufferedImage img = ImageIO.read(url);
+        Image scaleImage = img.getScaledInstance(750, 350,Image.SCALE_DEFAULT);
+        button.setIcon(new ImageIcon(scaleImage));
+        panel1.add(button);
+        button.addActionListener(new Action2());
 
-        //panel2.setLayout(null);
         panel2.setBackground(new Color(0xE5E5F6));
         panel2.setBounds(0,0,1500,35);
-        panel1.setBounds(125, 35, 1500, 800);
+        panel1.setBounds(125, 35, 1025, 800);
         setSize(1500, 800);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        /*addButton(new MainFrame(), new Pens(), new Pencil(),
+        addButton(new MainFrame(), new Pens(), new Pencil(),
                 new Ruler(), new Backpack(), new Notebooks(),
                 new Paints(), new Paper(), new Glue(),
-                new ForChildren(), new Others(), new Discounts());/
+                new ForChildren(), new Others(), new Discounts());
 
         //addButton();
 
@@ -92,7 +109,7 @@ public class ShopProject extends JFrame implements MenuListener {
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-    }*/
+    }
 
 
     /*private void addButton() {
@@ -125,7 +142,7 @@ public class ShopProject extends JFrame implements MenuListener {
         panel2.add(Box.createHorizontalGlue());
     }*/
 
-    /*private void addButton(Stationery...k) {
+    private void addButton(Stationery...k) {
         int l =  0;
         for (Stationery st : k) {
             JButton button = new JButton(st.getButtonName());
@@ -138,9 +155,9 @@ public class ShopProject extends JFrame implements MenuListener {
             button.addActionListener(new Action(st));
             l += 1;
         }
-    }*/
+    }
 
-    @Override
+   /* @Override
     public void menuSelected(MenuEvent e) {   //обработчик для кнопок
         if (e.getSource() == buttons.Pens)
         {
@@ -238,8 +255,35 @@ public class ShopProject extends JFrame implements MenuListener {
     public void menuCanceled(MenuEvent e) {
 
     }
+*/
+    private class Action2 implements ActionListener{
 
-    /*private class Action implements ActionListener {
+       @Override
+       public void actionPerformed(ActionEvent e) {
+           //paint(new MainFrame1());
+           remove(currentPanel);
+           /*
+           if (e.getSource().equals()) {
+               this.getContentPane().add(panel1, BorderLayout.CENTER);
+               currentPanel = panel1;
+           }
+           else {
+               if (e.getSource().equals(button2)) {
+                   this.getContentPane().add(panel2, BorderLayout.CENTER);
+                   currentPanel = panel2;
+               }
+               else {*/
+                   add(new MainFrame2(), BorderLayout.CENTER);
+                   currentPanel = new MainFrame2();
+               //}
+           //}
+
+           currentPanel.revalidate();
+          // this.repaint();
+
+       }
+   }
+    private class Action implements ActionListener {
         Stationery mc;
         private Action(Stationery st)
         {
@@ -253,17 +297,23 @@ public class ShopProject extends JFrame implements MenuListener {
     }
     private void paint(Stationery f) {
         panel1.removeAll();//panel1
+        panel1.setLayout(new BorderLayout());
         panel1.add(f);
         panel1.revalidate();
         panel1.repaint();
-    }*/
+    }
 }
 class ButtonTest {
     public static void main(String[] args) {
 
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ShopProject frame = new ShopProject();
+                ShopProject frame = null;
+                try {
+                    frame = new ShopProject();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }

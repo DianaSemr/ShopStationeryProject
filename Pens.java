@@ -9,9 +9,9 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 
-public class Pens extends JPanel {
+public class Pens extends Stationery {
 
-    JPanel panel = new JPanel();
+    /*JPanel panel = new JPanel();
 
     //JLabel label = new JLabel("Picture", new ImageIcon("https://sun9-35.userapi.com/impg/egG_d6sY1rHwpeEj_KNaHU6nwIpQxjbdKP3KKQ/PkXEw_Blyhw.jpg?size=320x320&quality=96&sign=f1cc911db57bd6b96a861ca959c2cf95&type=album"), JLabel.CENTER);
     //JLabel label1 = new JLabel("Метка");
@@ -34,12 +34,9 @@ public class Pens extends JPanel {
         add(panel);
 
         setVisible(true);
-    }
+    }*/
 
-
-}
-
-    /*@Override
+    @Override
     protected void paintStationery(java.awt.Graphics g) {
 
         Graphics2D g1 = (Graphics2D) g;
@@ -66,4 +63,5 @@ public class Pens extends JPanel {
     public String getButtonName() {
         return "Ручки";
     }
-}*/
+}
+
