@@ -13,6 +13,6 @@ public class Pencil extends Stationery {
 
     @Override
     public String getButtonName() {
-        return "Ручки";
+        return "Карандаши";
     }
 }
