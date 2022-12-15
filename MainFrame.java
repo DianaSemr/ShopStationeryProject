@@ -18,17 +18,19 @@ public class MainFrame extends Stationery {
         setLayout(null);
         this.setBackground(new Color(0xF7F7FC));
         try {
-            File input = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");
-            BufferedImage img3 = ImageIO.read(input);
-            JButton button = new JButton();// Добавляю кнопку для "акций"
-            button.setSize(750, 350);
-            button.setLocation(15 , 10);
+            //Создание первой кнопки, два варианта: через url и через файлы
+            File input = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");//определяю файл
+            BufferedImage img3 = ImageIO.read(input);//загружаю картинку
+            JButton button = new JButton();// создаю кнопку
+            button.setSize(750, 350);//задаю размер
+            button.setLocation(15 , 10);//задаю местоположение
+            //через URL
             //URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
             //BufferedImage img = ImageIO.read(url);
-            Image scaleImage = img3.getScaledInstance(750, 350,Image.SCALE_DEFAULT);
-            button.setIcon(new ImageIcon(scaleImage));
-            add(button);
-            button.addActionListener(new Action2(new MainFrame2("0"), "0"));
+            Image scaleImage = img3.getScaledInstance(750, 350,Image.SCALE_DEFAULT);//задаю размеры изображения
+            button.setIcon(new ImageIcon(scaleImage));//устанавливаю картинку на кнопку
+            add(button);//добавляю кнопку
+            button.addActionListener(new Action2(new MainFrame2("0"), "0"));//добавляю действие к кнопке
 
             File input2 = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame2.jpg");
             BufferedImage img4 = ImageIO.read(input2);
@@ -90,11 +92,11 @@ public class MainFrame extends Stationery {
     public String getButtonName() {
         return "Главная";
     }
-    public class Action2 implements ActionListener {
+    public class Action2 implements ActionListener {//Определяем действия
         Stationery s;
         Action2(Stationery st, String string)
         {
-            s = st;
+            s = st;//задаю тип в зависимости от нажатой кнопки, string - номер кнопки
         }
 
         @Override

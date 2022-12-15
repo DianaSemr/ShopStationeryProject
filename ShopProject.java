@@ -6,11 +6,10 @@ import java.awt.event.*;
 import java.io.IOException;
 
 public class ShopProject extends JFrame {//implements MenuListener
-    private JPanel panel1;
-    private final JPanel currentPanel = panel1; // панель, которую мы будем менять при нажатии на кнопку
-    private final JPanel panel2; // панель для кнопок
+    private JPanel panel1; //меняющаяся панель в центре
+    private final JPanel panel2; // панель для кнопок сверху
 
-    JPanel panel3;
+    JPanel panel3; //панель слева(поля)
     public ShopProject() throws IOException {
         super("Shop");
         setLayout(null);
@@ -22,24 +21,24 @@ public class ShopProject extends JFrame {//implements MenuListener
         double height = getHeight();
 
 
-        panel1.setSize(getWidth(), 500);
-        panel1.setLocation(0, 0);
-        panel2.setSize(100, getHeight() - 500);
-        panel2.setLocation(0, 500);
+        //panel1.setSize(getWidth(), 500);
+        //panel1.setLocation(0, 0);
+        //panel2.setSize(100, getHeight() - 500);
+        //panel2.setLocation(0, 500);
         setSize(1500, 800);
-        panel1 = new JPanel();
+        //panel1 = new JPanel();
         panel1.setLayout(null);
         //panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS)); /// добавила то что в скобках
         panel3 = new JPanel();
-        panel3.setSize(125, 800);
-        panel3.setLocation(0, 35);
+        panel3.setSize(125, 800);//задаю размер
+        panel3.setLocation(0, 35);//задаю местоположение
         panel3.setBackground(new Color(0xC6F1FF));
         add(panel3);
         panel1.setBackground(Color.WHITE);
 
-        JPanel panel4 = new JPanel();
-        panel4.setSize(125, 800);
-        panel4.setLocation(1150, 35);
+        JPanel panel4 = new JPanel();//панель справа(поля)
+        panel4.setSize(125, 800);//задаю размер
+        panel4.setLocation(1150, 35);//задаю местоположение
         panel4.setBackground(new Color(0xC6F1FF));
         add(panel4);
 
@@ -47,164 +46,73 @@ public class ShopProject extends JFrame {//implements MenuListener
         init();
     }
     private void init() {
-        add(panel1);
-        add(panel2);
+        add(panel1);//добавляю меняющуюся панельку
+        add(panel2);//добавляю панельку с кнопками
 
         panel2.setLayout(null);
         panel1.setLayout(new BorderLayout());
-        panel1.add(new MainFrame());
+        panel1.add(new MainFrame());//добавляю главную панель на panel1
         panel1.revalidate();
         panel1.repaint();
-        panel2.setBackground(new Color(0xE5E5F6));
-        panel2.setBounds(0,0,1500,35);
-        panel1.setBounds(125, 35, 1025, 800);
-        setSize(1500, 800);
+        panel2.setBackground(new Color(0xE5E5F6));//устанавливаю цвет фона панели с кнопками
+        panel2.setBounds(0,0,1500,35);//задаю размеры панели с кнопками
+        panel1.setBounds(125, 35, 1025, 800);//задаю разммеры меняющейся панельки
+
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         addButton(new MainFrame(), new Pens(), new Pencil(),
                 new Ruler(), new Backpack(), new Notebooks(),
                 new Paints(), new Paper(), new Glue(),
-                new ForChildren(), new Others(), new Discounts());
+                new ForChildren(), new Others(), new Discounts());//функция добавления кнопок на panel2
 
         //addButton();
 
-        setSize(1500, 800);
+        setSize(1500, 800);//устанавливаем размеры окна
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    private void addButton(Stationery...k) {
-        int l =  0;
-        for (Stationery st : k) {
-            JButton button = new JButton(st.getButtonName());
-            button.setSize(90, 35);
-            button.setLocation(l * 100 + 10, 0);
-            button.setBorderPainted(false);
-            button.setContentAreaFilled(false);
-            button.setFocusPainted(false);
-            panel2.add(button);
-            button.addActionListener(new Action2(st));
-            l += 1;
+    private void addButton(Stationery...k) {//функция добавления кнопок на panel2
+        int l =  0;//номер устанавливаемой в данный момент кнопки
+        for (Stationery st : k) {//для разных видов панелек типа Stationery
+            JButton button = new JButton(st.getButtonName());//создаем кнопку, метод getButtonName() возвращает имя типа устанавливаемой панельки
+            button.setSize(90, 35);//задаем размеры кнопки
+            button.setLocation(l * 100 + 10, 0);//задаем местоположение кнопки
+            button.setBorderPainted(false);//убираем очертания кнопки
+            button.setContentAreaFilled(false);//убираем заливку кнопки
+            button.setFocusPainted(false);//убираем фокус на кнопке
+            panel2.add(button);//добавляем кнопку на панельку
+            button.addActionListener(new Action2(st));//добавляем действие
+            l += 1;//переходим к следующей кнопке
         }
     }
 
-   /* @Override
-    public void menuSelected(MenuEvent e) {   //обработчик для кнопок
-        if (e.getSource() == buttons.Pens)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Pens");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Pencil)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Pencil");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Discounts)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Discounts");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Others)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Others");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Glue)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Glue");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.ForChildren)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "ForChildren");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Ruler)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Ruler");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.MainFrame)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "MainFrame");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Paper)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Paper");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Backpack)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Backpack");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Notebooks)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Notebooks");
-            panel.add(basic);
-            panel.updateUI();
-        }
-        if (e.getSource() == buttons.Paints)
-        {
-            panel.remove(basic);
-            basic = new Basic(width, height - 50, "Paints");
-            panel.add(basic);
-            panel.updateUI();
-        }
 
-    }
-
-    @Override
-    public void menuDeselected(MenuEvent e) {
-
-    }
-
-    @Override
-    public void menuCanceled(MenuEvent e) {
-
-    }
-*/
     public class Action2 implements ActionListener{
        Stationery s;
         Action2(Stationery st)
         {
-           s = st;
+           s = st;//закидываем тип панельки, который мы будем ставить
         }
 
        @Override
        public void actionPerformed(ActionEvent e) {
-            panel1.removeAll();
+            panel1.removeAll();//очищаем panel1
             panel1.setLayout(new BorderLayout());
-            JScrollPane pane = new JScrollPane(s);
-            panel1.add(pane);
+            JScrollPane pane = new JScrollPane(s);//создаем scrollPane и добавляем на нее новую панельку(страничку)
+            panel1.add(pane);//добавляем scrollPane на panel1
            // panel1.add(s);
             panel1.revalidate();
             panel1.repaint();
+
+            //думаю, нужно ли добавлять, чтобы панелька выходила изначальная, без изменений
+            /*panel2.removeAll();
+           addButton(new MainFrame(), new Pens(), new Pencil(),
+                   new Ruler(), new Backpack(), new Notebooks(),
+                   new Paints(), new Paper(), new Glue(),
+                   new ForChildren(), new Others(), new Discounts());//функция добавления кнопок на panel2*/
 
        }
    }

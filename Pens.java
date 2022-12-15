@@ -49,10 +49,6 @@ public class Pens extends Stationery {
             BufferedImage img2 = ImageIO.read(url2);
             Image scaleImage = img2.getScaledInstance(200, 200,Image.SCALE_DEFAULT);
             g1.drawImage(scaleImage, 100, 100, this);
-           // g1.setPaint(new Color(0xB00606));
-           // Font newFont = new Font("Serif", Font.ITALIC, 45);
-            //setFont(newFont);
-            //g1.drawString("Welcome To The Login Screen", 200, 140);
 
         }catch (Exception ex) {
             ex.printStackTrace();
