@@ -3,6 +3,8 @@ import java.awt.Graphics;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Path2D;
@@ -11,23 +13,41 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 
 public class MainFrame extends Stationery {
-    @Override
-   protected void paintStationery(Graphics g) {
-        Graphics2D g1 = (Graphics2D) g;
-        g1.setBackground(Color.BLACK);
+    MainFrame() {
+        this.setBackground(new Color(0xF7F7FC));
         try {
-            URL url = new URL("https://img.freepik.com/free-photo/boxes-with-gifts-christmas-decorations-blue-surface_127032-2004.jpg?w=996&t=st=1670335922~exp=1670336522~hmac=1e26e0ccb14772b6359335486c396b43536f1dfdb180772b575e00ffe490dd87");
+            JButton button = new JButton();// Добавляю кнопку для "акций"
+            button.setSize(750, 350);
+            button.setLocation(15 , 10);
+            URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
             BufferedImage img = ImageIO.read(url);
-            Image scaleImage = img.getScaledInstance(1030, 800,Image.SCALE_DEFAULT);
-            g1.drawImage(scaleImage, 1, 1, this);
-            g1.setPaint(new Color(0xB00606));
-            Font newFont = new Font("Serif", Font.ITALIC, 45);
+            Image scaleImage = img.getScaledInstance(750, 350,Image.SCALE_DEFAULT);
+            button.setIcon(new ImageIcon(scaleImage));
+            add(button);
+            button.addActionListener(new Action2(new MainFrame1()));
+           /* URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
+            BufferedImage img = ImageIO.read(url);
+            Image scaleImage = img.getScaledInstance(1000, 350, Image.SCALE_DEFAULT);
+            JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
+            add(picLabel);
+            Font newFont = new Font("Serif", Font.ITALIC, 25);
             setFont(newFont);
-            g1.drawString("Welcome To The Login Screen", 200, 140);
+            JLabel s = new JLabel("В Новый год происходит много чудес: \n даже цены замерли в ожидании волшебства.");
+            String a = "В Новый год происходит много чудес: даже цены замерли в ожидании волшебства. Скорее забирайте под ёлку яркие краски, забавные игрушки и праздничные украшения. \n";
+            String b = "Специальные цены на выделенный ассортимент. Акция действует с 12 по 25 декабря в магазинах сети. ";
+            add(s);
+            s.setFont(newFont);
+            //g1.drawString(a, 30,380);
 
-        }catch (Exception ex) {
+            */
+
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    protected void paintStationery(Graphics g) {
 
     }
 
@@ -35,5 +55,25 @@ public class MainFrame extends Stationery {
     public String getButtonName() {
         return "Главная";
     }
+    public class Action2 implements ActionListener {
+        Stationery s;
+        Action2(Stationery st)
+        {
+            s = st;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //paint(new MainFrame1()); // отрисовка
+            //remove(currentPanel)// замена панели
+            removeAll();
+            //panel1 = new MainFrame2();
+            setLayout(new BorderLayout());
+            add(s);
+            revalidate();
+            repaint();
+
+        }
+}
 }
 

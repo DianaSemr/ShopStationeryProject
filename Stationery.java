@@ -1,7 +1,8 @@
 package ITProject;
 import java.awt.*;
-import javax.swing.JComponent;
-public abstract class Stationery extends JComponent{
+import javax.swing.*;
+
+public abstract class Stationery extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

@@ -91,8 +91,7 @@ public class ShopProject extends JFrame {//implements MenuListener
         Image scaleImage = img.getScaledInstance(750, 350,Image.SCALE_DEFAULT);
         button.setIcon(new ImageIcon(scaleImage));
         panel1.add(button);
-        button.addActionListener(new Action2());
-        JFrame g = this;////
+        button.addActionListener(new Action2(new MainFrame()));
         panel2.setBackground(new Color(0xE5E5F6));
         panel2.setBounds(0,0,1500,35);
         panel1.setBounds(125, 35, 1025, 800);
@@ -154,7 +153,7 @@ public class ShopProject extends JFrame {//implements MenuListener
             button.setContentAreaFilled(false);
             button.setFocusPainted(false);
             panel2.add(button);
-            button.addActionListener(new Action(st));
+            button.addActionListener(new Action2(st));
             l += 1;
         }
     }
@@ -258,7 +257,12 @@ public class ShopProject extends JFrame {//implements MenuListener
 
     }
 */
-    private class Action2 implements ActionListener{
+    public class Action2 implements ActionListener{
+       Stationery s;
+        Action2(Stationery st)
+        {
+           s = st;
+        }
 
        @Override
        public void actionPerformed(ActionEvent e) {
@@ -267,7 +271,7 @@ public class ShopProject extends JFrame {//implements MenuListener
             panel1.removeAll();
             //panel1 = new MainFrame2();
             panel1.setLayout(new BorderLayout());
-            panel1.add(new MainFrame2());
+            panel1.add(s);
             panel1.revalidate();
             panel1.repaint();
 
