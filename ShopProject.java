@@ -16,19 +16,10 @@ import static java.awt.FlowLayout.*;
 
 public class ShopProject extends JFrame {//implements MenuListener
     private JPanel panel1;
-    private JPanel currentPanel = panel1; // панель, которую мы будем менять при нажатии на кнопку
-    private JPanel panel2; // панель для кнопок
+    private final JPanel currentPanel = panel1; // панель, которую мы будем менять при нажатии на кнопку
+    private final JPanel panel2; // панель для кнопок
 
     JPanel panel3;
-    /*
-    JPanel panel = new JPanel();     // общая панель для всего фрейма
-
-    int height = Toolkit.getDefaultToolkit().getScreenSize().height;
-    int width =Toolkit.getDefaultToolkit().getScreenSize().width;
-    Buttons buttons = new Buttons(width, 50, this); // класс для кнопок
-
-    Basic basic = new Basic(width, height - 50, "MainFrame"); // класс для основного экрана
-*/
     public ShopProject() throws IOException {
         super("Shop");
         setLayout(null);
@@ -44,20 +35,7 @@ public class ShopProject extends JFrame {//implements MenuListener
         panel1.setLocation(0, 0);
         panel2.setSize(100, getHeight() - 500);
         panel2.setLocation(0, 500);
-        //JScrollPane scrPane = new JScrollPane(panel1); Прокрутка
-        //add(scrPane);
-        //pack();
-        //init();
-
-        // panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        /*panel.setLayout(null);
-        panel.add(buttons);
-        panel.add(basic);
-
-        getContentPane().add(panel);
-*/
         setSize(1500, 800);
-        //this.setBackground(new Color(0x05C3FC));
         panel1 = new JPanel();
         panel1.setLayout(null);
         //panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS)); /// добавила то что в скобках
@@ -77,7 +55,7 @@ public class ShopProject extends JFrame {//implements MenuListener
         //pack();
         init();
     }
-    private void init() throws IOException {
+    private void init() {
         add(panel1);
         add(panel2);
 
@@ -105,37 +83,6 @@ public class ShopProject extends JFrame {//implements MenuListener
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
-
-    /*private void addButton() {
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(MainFrame);
-        MainFrame.setBorderPainted(false);
-        MainFrame.setContentAreaFilled(false);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Pens);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Pencil);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Ruler);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Backpack);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Notebooks);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Paints);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Paper);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Glue);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(ForChildren);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Others);
-        panel2.add(Box.createHorizontalGlue());
-        panel2.add(Discounts);
-        panel2.add(Box.createHorizontalGlue());
-    }*/
 
     private void addButton(Stationery...k) {
         int l =  0;
@@ -260,10 +207,7 @@ public class ShopProject extends JFrame {//implements MenuListener
 
        @Override
        public void actionPerformed(ActionEvent e) {
-           //paint(new MainFrame1()); // отрисовка
-           //remove(currentPanel)// замена панели
             panel1.removeAll();
-            //panel1 = new MainFrame2();
             panel1.setLayout(new BorderLayout());
             panel1.add(s);
             panel1.revalidate();
@@ -294,17 +238,15 @@ public class ShopProject extends JFrame {//implements MenuListener
 class ButtonTest {
     public static void main(String[] args) {
 
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                ShopProject frame = null;
-                try {
-                    frame = new ShopProject();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
+        EventQueue.invokeLater(() -> {
+            ShopProject frame = null;
+            try {
+                frame = new ShopProject();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
         });
     }
 }

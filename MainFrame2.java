@@ -4,15 +4,16 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.net.URL;
 
-public class MainFrame2 extends JPanel {
+public class MainFrame2 extends Stationery {
     MainFrame2()
     {
         this.setBackground(new Color(0xF7F7FC));
         try {
-            URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
-            BufferedImage img = ImageIO.read(url);
+            File input = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");
+            BufferedImage img = ImageIO.read(input);
             Image scaleImage = img.getScaledInstance(1000, 350,Image.SCALE_DEFAULT);
             JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
             add(picLabel);
@@ -29,5 +30,15 @@ public class MainFrame2 extends JPanel {
             ex.printStackTrace();
         }
 
+    }
+
+    @Override
+    protected void paintStationery(Graphics g) {
+
+    }
+
+    @Override
+    public String getButtonName() {
+        return null;
     }
 }
