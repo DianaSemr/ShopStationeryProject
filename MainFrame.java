@@ -28,8 +28,14 @@ public class MainFrame extends Stationery {
             button.addActionListener(new Action2(new MainFrame1()));
 
             JButton button2 = new JButton();
-
-
+            button2.setSize(230, 350);
+            button2.setLocation(780 , 10);
+            URL url2 = new URL("https://avatars.mds.yandex.net/i?id=2a0000017a0f4a6ff180dbdc7181ce03a35f-3629830-images-thumbs&n=13");
+            BufferedImage img2 = ImageIO.read(url2);
+            Image scaleImage2 = img2.getScaledInstance(230, 350,Image.SCALE_DEFAULT);
+            button2.setIcon(new ImageIcon(scaleImage2));
+            add(button2);
+            button2.addActionListener(new Action2(new MainFrame1()));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
