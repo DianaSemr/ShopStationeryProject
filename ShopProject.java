@@ -82,16 +82,10 @@ public class ShopProject extends JFrame {//implements MenuListener
         add(panel2);
 
         panel2.setLayout(null);
-
-        JButton button = new JButton();// Добавляю кнопку для "акций"
-        button.setSize(750, 350);
-        button.setLocation(15 , 10);
-        URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
-        BufferedImage img = ImageIO.read(url);
-        Image scaleImage = img.getScaledInstance(750, 350,Image.SCALE_DEFAULT);
-        button.setIcon(new ImageIcon(scaleImage));
-        panel1.add(button);
-        button.addActionListener(new Action2(new MainFrame()));
+        panel1.setLayout(new BorderLayout());
+        panel1.add(new MainFrame());
+        panel1.revalidate();
+        panel1.repaint();
         panel2.setBackground(new Color(0xE5E5F6));
         panel2.setBounds(0,0,1500,35);
         panel1.setBounds(125, 35, 1025, 800);
