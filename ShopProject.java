@@ -1,18 +1,9 @@
 package ITProject;
-import javax.imageio.ImageIO;
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuKeyListener;
-import javax.swing.event.MenuListener;
 import java.awt.event.*;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import static java.awt.FlowLayout.*;
 
 public class ShopProject extends JFrame {//implements MenuListener
     private JPanel panel1;
@@ -209,7 +200,9 @@ public class ShopProject extends JFrame {//implements MenuListener
        public void actionPerformed(ActionEvent e) {
             panel1.removeAll();
             panel1.setLayout(new BorderLayout());
-            panel1.add(s);
+            JScrollPane pane = new JScrollPane(s);
+            panel1.add(pane);
+           // panel1.add(s);
             panel1.revalidate();
             panel1.repaint();
 
