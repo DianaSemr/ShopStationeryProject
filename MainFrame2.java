@@ -50,7 +50,15 @@ public class MainFrame2 extends Stationery {
                 String a = "В Новый год происходит много чудес: даже цены замерли в ожидании волшебства. Скорее забирайте под ёлку яркие краски, забавные игрушки и праздничные украшения. \n";
                 String b = "Специальные цены на выделенный ассортимент. Акция действует с 12 по 25 декабря в магазинах сети. ";
                 add(s);
+                s.setLocation(15, 380);
                 s.setFont(newFont);
+
+                JTextArea textArea = new JTextArea(a);
+               // textArea.setLocation(15, 380);
+                textArea.setFont(newFont);
+                textArea.setBounds(15, 380, 900, 120);
+                add(textArea);
+
                 //g1.drawString(a, 30,380);
 
             }catch (Exception ex) {

@@ -25,19 +25,19 @@ public class ShopProject extends JFrame {//implements MenuListener
         //panel1.setLocation(0, 0);
         //panel2.setSize(100, getHeight() - 500);
         //panel2.setLocation(0, 500);
-        setSize(1500, 800);
+        setSize(1500, 650);
         //panel1 = new JPanel();
         panel1.setLayout(null);
         //panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS)); /// добавила то что в скобках
         panel3 = new JPanel();
-        panel3.setSize(125, 800);//задаю размер
+        panel3.setSize(125, 650);//задаю размер
         panel3.setLocation(0, 35);//задаю местоположение
         panel3.setBackground(new Color(0xC6F1FF));
         add(panel3);
         panel1.setBackground(Color.WHITE);
 
         JPanel panel4 = new JPanel();//панель справа(поля)
-        panel4.setSize(125, 800);//задаю размер
+        panel4.setSize(125, 650);//задаю размер
         panel4.setLocation(1150, 35);//задаю местоположение
         panel4.setBackground(new Color(0xC6F1FF));
         add(panel4);
@@ -56,7 +56,7 @@ public class ShopProject extends JFrame {//implements MenuListener
         panel1.repaint();
         panel2.setBackground(new Color(0xE5E5F6));//устанавливаю цвет фона панели с кнопками
         panel2.setBounds(0,0,1500,35);//задаю размеры панели с кнопками
-        panel1.setBounds(125, 35, 1025, 800);//задаю разммеры меняющейся панельки
+        panel1.setBounds(125, 35, 1025, 555);//задаю разммеры меняющейся панельки //650
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -68,7 +68,7 @@ public class ShopProject extends JFrame {//implements MenuListener
 
         //addButton();
 
-        setSize(1500, 800);//устанавливаем размеры окна
+        setSize(1500, 650);//устанавливаем размеры окна
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -108,7 +108,7 @@ public class ShopProject extends JFrame {//implements MenuListener
             panel1.repaint();
 
             //думаю, нужно ли добавлять, чтобы панелька выходила изначальная, без изменений
-            /*panel2.removeAll();
+            panel2.removeAll();
            addButton(new MainFrame(), new Pens(), new Pencil(),
                    new Ruler(), new Backpack(), new Notebooks(),
                    new Paints(), new Paper(), new Glue(),
