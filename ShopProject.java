@@ -56,7 +56,7 @@ public class ShopProject extends JFrame {//implements MenuListener
         panel1.repaint();
         panel2.setBackground(new Color(0xE5E5F6));//устанавливаю цвет фона панели с кнопками
         panel2.setBounds(0,0,1500,35);//задаю размеры панели с кнопками
-        panel1.setBounds(125, 35, 1025, 555);//задаю разммеры меняющейся панельки //650
+        panel1.setBounds(125, 35, 1025, 580);//задаю размеры меняющейся панельки //800
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

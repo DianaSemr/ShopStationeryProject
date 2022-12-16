@@ -44,23 +44,21 @@ public class MainFrame2 extends Stationery {
                 Image scaleImage = img.getScaledInstance(1000, 350,Image.SCALE_DEFAULT);
                 JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
                 add(picLabel);
-                Font newFont = new Font("Serif", Font.ITALIC, 25);
+                Font newFont = new Font("Serif", Font.ITALIC, 23);
                 setFont(newFont);
-                JLabel s = new JLabel("В Новый год происходит много чудес: \n даже цены замерли в ожидании волшебства.");
-                String a = "В Новый год происходит много чудес: даже цены замерли в ожидании волшебства. Скорее забирайте под ёлку яркие краски, забавные игрушки и праздничные украшения. \n";
-                String b = "Специальные цены на выделенный ассортимент. Акция действует с 12 по 25 декабря в магазинах сети. ";
-                add(s);
-                s.setLocation(15, 380);
-                s.setFont(newFont);
+                String []s2 = new String[7];
+                s2[0] = "В Новый год происходит много чудес: \n даже цены замерли в ожидании волшебства.";
+                s2[1] = " Скорее забирайте под ёлку яркие краски, забавные игрушки и праздничные украшения. \n";
+                s2[2] = "Специальные цены только на выделенный ассортимент.";
+                s2[3] = "Акция действует с 12 по 25 декабря в магазинах сети.";
 
-                JTextArea textArea = new JTextArea(a);
-               // textArea.setLocation(15, 380);
-                textArea.setFont(newFont);
-                textArea.setBounds(15, 380, 900, 120);
-                add(textArea);
-
-                //g1.drawString(a, 30,380);
-
+                for(int i = 0; i < 4; i++)
+                {
+                    JLabel d = new JLabel(s2[i]);
+                    d.setLocation(15, 420 + 10 * i);
+                    d.setFont(newFont);
+                    add(d);
+                }
             }catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -72,6 +70,32 @@ public class MainFrame2 extends Stationery {
             BufferedImage img2 = ImageIO.read(url2);
             JLabel picLabel = new JLabel(new ImageIcon(img2));
             add(picLabel);
+        }
+        else if(Objects.equals(string, "2"))
+        {
+            LayoutManager overlay = new OverlayLayout(this);
+            setLayout(overlay);
+
+            Font newFont = new Font("Serif", Font.BOLD, 23);
+            JLabel s = new JLabel("Новинка в магазине!");
+            s.setFont(newFont);
+            s.setLocation(100, 70);
+            add(s);
+            //s.setAlignmentX(0.1f);
+            //s.setAlignmentY(0.1f);
+            JLabel s2 = new JLabel("Теперь можно приобрести краски для граффити");
+            s2.setFont(newFont);
+            //s2.setLocation(500, 470);
+            add(s2);
+            s2.setAlignmentX(0.1f);
+            s2.setAlignmentY(0.1f);
+            URL url2 = new URL("https://catherineasquithgallery.com/uploads/posts/2021-02/1614534916_179-p-kraski-na-belom-fone-237.jpg");
+            BufferedImage img = ImageIO.read(url2);
+            Image scaleImage = img.getScaledInstance(1025, 580,Image.SCALE_DEFAULT);
+            JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
+            add(picLabel);
+            picLabel.setAlignmentX(0.1f);
+            picLabel.setAlignmentY(0.1f);
         }
     }
 

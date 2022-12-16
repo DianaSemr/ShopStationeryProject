@@ -11,6 +11,7 @@ import java.awt.geom.Path2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 public class MainFrame extends Stationery {
@@ -30,7 +31,7 @@ public class MainFrame extends Stationery {
             Image scaleImage = img3.getScaledInstance(750, 350,Image.SCALE_DEFAULT);//задаю размеры изображения
             button.setIcon(new ImageIcon(scaleImage));//устанавливаю картинку на кнопку
             add(button);//добавляю кнопку
-            button.addActionListener(new Action2(new MainFrame2("0"), "0"));//добавляю действие к кнопке
+            button.addActionListener(new Action2(new MainFrame2("0")));//добавляю действие к кнопке
 
             File input2 = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame2.jpg");
             BufferedImage img4 = ImageIO.read(input2);
@@ -42,7 +43,7 @@ public class MainFrame extends Stationery {
             Image scaleImage2 = img2.getScaledInstance(235, 350,Image.SCALE_DEFAULT);
             button2.setIcon(new ImageIcon(scaleImage2));
             add(button2);
-            button2.addActionListener(new Action2(new MainFrame2("1"), "1"));
+            button2.addActionListener(new Action2(new MainFrame2("1")));
 
 
             File input3 = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");
@@ -55,7 +56,7 @@ public class MainFrame extends Stationery {
             Image scaleImage4 = img5.getScaledInstance(300, 150,Image.SCALE_DEFAULT);
             button3.setIcon(new ImageIcon(scaleImage4));
             add(button3);
-            button3.addActionListener(new Action2(new MainFrame2(), "2"));
+            button3.addActionListener(new Action2(new MainFrame2("2")));
 
 
             JButton button4 = new JButton();// Добавляю кнопку для "акций"
@@ -66,7 +67,7 @@ public class MainFrame extends Stationery {
             Image scaleImage6 = img6.getScaledInstance(300, 150,Image.SCALE_DEFAULT);
             button4.setIcon(new ImageIcon(scaleImage6));
             add(button4);
-            button4.addActionListener(new Action2(new MainFrame2(), "3"));
+            button4.addActionListener(new Action2(new MainFrame2("3")));
 
 
             JButton button5 = new JButton();// Добавляю кнопку для "акций"
@@ -77,7 +78,7 @@ public class MainFrame extends Stationery {
             Image scaleImage5 = img7.getScaledInstance(350, 150,Image.SCALE_DEFAULT);
             button5.setIcon(new ImageIcon(scaleImage5));
             add(button5);
-            button4.addActionListener(new Action2(new MainFrame2(), "4"));
+            button4.addActionListener(new Action2(new MainFrame2("4")));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -94,8 +95,7 @@ public class MainFrame extends Stationery {
     }
     public class Action2 implements ActionListener {//Определяем действия
         Stationery s;
-        Action2(Stationery st, String string)
-        {
+        Action2(Stationery st) throws IOException {
             s = st;//задаю тип в зависимости от нажатой кнопки, string - номер кнопки
         }
 
