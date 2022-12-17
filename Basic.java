@@ -1,72 +1,52 @@
 package ITProject;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.util.Objects;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
-public class Basic extends JPanel {
+public class Basic extends JPanel{
 
-    public Basic(int width, int height, String name_frame) {
+    public Basic(int width, int height, String url, String str) {
 
-        setSize(new Dimension(width, height - 50));
+        setPreferredSize(new Dimension(400, 400));
+        setBackground(new Color(253, 251, 251));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        setBackground(new Color(148, 161, 189));
+        JPanel panel_for_picture = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panel_for_picture.setOpaque(false);
+        panel_for_picture.setPreferredSize(new Dimension(350, 350));
 
-        Pens pens = new Pens();
-        Ruler ruler = new Ruler();
-        Pencil pencil = new Pencil();
-        Paper paper = new Paper();
-        Paints paints = new Paints();
-        Others others = new Others();
-        Notebooks notebooks = new Notebooks();
-        MainFrame mainFrame = new MainFrame();
-        Glue glue = new Glue();
-        ForChildren forChildren = new ForChildren();
-        Discounts discounts = new Discounts();
-        Backpack backpack = new Backpack();
+        try {
+            URL u = new URL(url);
+            BufferedImage img = ImageIO.read(u);
+            Image scaleImage = img.getScaledInstance(350, 350,Image.SCALE_DEFAULT);
+            JLabel picture = new JLabel(new ImageIcon(scaleImage));
+            panel_for_picture.add(picture);
+            add(panel_for_picture);
 
-        setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-        JPanel mane_panel = new JPanel();
-
-        if (Objects.equals(name_frame, "Pens")) {
-            mane_panel.add(pens);
-        }
-        if (name_frame == "Ruler") {
-            mane_panel.add(ruler);
-        }
-        if (name_frame == "Pencil") {
-            mane_panel.add(pencil);
-        }
-        if (name_frame == "Paper") {
-            mane_panel.add(paper);
-        }
-        if (name_frame == "Paints") {
-            mane_panel.add(paints);
-        }
-        if (name_frame == "Others") {
-            mane_panel.add(others);
-        }
-        if (name_frame == "Notebooks") {
-            mane_panel.add(notebooks);
-        }
-        if (name_frame == "MainFrame") {
-            mane_panel.add(mainFrame);
-        }
-        if (name_frame == "Glue") {
-            mane_panel.add(glue);
-        }
-        if (name_frame == "ForChildren") {
-            mane_panel.add(forChildren);
-        }
-        if (name_frame == "Discounts") {
-            mane_panel.add(discounts);
-        }
-        if (name_frame == "Backpack") {
-            mane_panel.add(backpack);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
+        JPanel panel_for_label = new JPanel(new FlowLayout(FlowLayout.CENTER));    // панелька для цены
+        panel_for_label.setOpaque(false);
+        JLabel label = new JLabel();       // лейбл цена
+        label.setText("Цена: "+str+" ₽  ");
+        Font newFont = new Font("Serif", Font.ITALIC, 25);
+        label.setFont(newFont);
+        panel_for_label.add(label);
+        add(panel_for_label);
 
         setVisible(true);
+    }
+
+    protected void paintStationery(java.awt.Graphics g, String url) {
+        Graphics2D g1 = (Graphics2D) g;
+
+
     }
 
 }
