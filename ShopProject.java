@@ -108,12 +108,11 @@ public class ShopProject extends JFrame {//implements MenuListener
             panel1.repaint();
 
             //думаю, нужно ли добавлять, чтобы панелька выходила изначальная, без изменений
-            /*panel2.removeAll();
+           panel2.removeAll();
            addButton(new MainFrame(), new Pens(), new Pencil(),
                    new Ruler(), new Backpack(), new Notebooks(),
                    new Paints(), new Paper(), new Glue(),
                    new ForChildren(), new Others(), new Discounts());//функция добавления кнопок на panel2*/
-
        }
    }
     private class Action implements ActionListener {
