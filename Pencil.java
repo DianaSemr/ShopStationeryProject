@@ -40,12 +40,12 @@ public class Pencil extends Stationery {
 
         GridLayout grid = new GridLayout(3, 2, 50, 50);    //  панелька-табличка
         panel.setLayout(grid);
-        Basic panel1 = new Basic(400, 400, "https://avatars.mds.yandex.net/i?id=5e11c5468ce1fbb10b967fcae9636ffb25e32e8d-5246350-images-thumbs&n=13", "17");
-        Basic panel2 = new Basic(400, 400, "https://avatars.mds.yandex.net/i?id=be86449fd761c0c788d0f69c4c604191ddb64ff1-7012560-images-thumbs&n=13", "25");
-        Basic panel3 = new Basic(400, 400, "https://avatars.mds.yandex.net/i?id=b486af573dd74bce745aa6648b37a50e31f604a1-2772079-images-thumbs&n=13", "33");
-        Basic panel4 = new Basic(400, 400, "https://avatars.mds.yandex.net/i?id=41cac3c67cc9ca6e0c2d1af9208d49c2aa027bf8-6994724-images-thumbs&n=13", "11");
-        Basic panel5 = new Basic(400, 400, "https://avatars.mds.yandex.net/i?id=3ffb3856b86f48202c8cbaad636499f4-5118143-images-thumbs&n=13", "19");
-        Basic panel6 = new Basic(400, 400, "https://avatars.mds.yandex.net/i?id=77fb9f48c50b11b718ae607ef2ee9a06-5888219-images-thumbs&n=13", "22");
+        Basic panel1 = new Basic(400, 400, "https://www.ukazka.ru/img/g/uk965753.jpg", "17");
+        Basic panel2 = new Basic(400, 400, "https://artmarker.ru/upload/resize_cache/iblock/c1b/700_700_0/c1bccf2a39c634c9545872f9cfcad52b.jpeg", "25");
+        Basic panel3 = new Basic(400, 400, "https://avatars.mds.yandex.net/get-mpic/2991631/img_id8249381499784622116.jpeg/orig", "33");
+        Basic panel4 = new Basic(400, 400, "https://do-sketch.ru/wa-data/public/shop/products/52/20/32052/images/24123/24123.970.png", "11");
+        Basic panel5 = new Basic(400, 400, "https://krasniykarandash.ru/upload/resize/618091/618091_800x800x70.jpg", "19");
+        Basic panel6 = new Basic(400, 400, "https://kalem-kanc.ru/image/catalog/relef/karandashi-tsvetnye-professionalnye-klassicheskie/IMGbc3931e5defee206eec3f8cd5454143d.jpg", "22");
 
 
         panel.add(panel1);
