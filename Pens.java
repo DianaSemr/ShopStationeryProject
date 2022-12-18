@@ -50,8 +50,6 @@ public class Pens extends Stationery {
 
         GridLayout grid = new GridLayout(3, 2, 50, 50);    //  панелька-табличка
         panel.setLayout(grid);
-
-
         Basic panel1 = new Basic(400, 400, "https://s3.ibta.ru/goods/143300/c2da6b873cd8ca8a27e3359076dc8b83_xl.jpg", "27");
         Basic panel2 = new Basic(400, 400, "https://s3.ibta.ru/goods/140057/82f81d9873f12ab4f1203a4e745989b3_l.jpg", "15");
         Basic panel3 = new Basic(400, 400, "https://s3.ibta.ru/goods/143227/7a7077ea65b238f4b7670c01475b5084_l.jpg", "30");

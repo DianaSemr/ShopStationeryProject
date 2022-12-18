@@ -8,6 +8,7 @@ import java.io.IOException;
 public class ShopProject extends JFrame {//implements MenuListener
     private JPanel panel1; //меняющаяся панель в центре
     private final JPanel panel2; // панель для кнопок сверху
+    MainFrame MF = new MainFrame();
 
     JPanel panel3; //панель слева(поля)
     public ShopProject() throws IOException {
@@ -60,8 +61,8 @@ public class ShopProject extends JFrame {//implements MenuListener
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        addButton(new MainFrame(), new Pens(), new Pencil(),
+        MF = new MainFrame();
+        addButton(MF, new Pens(), new Pencil(),
                 new Ruler(), new Backpack(), new Notebooks(),
                 new Paints(), new Paper(), new Glue(),
                 new ForChildren(), new Others(), new Discounts());//функция добавления кнопок на panel2
@@ -106,10 +107,9 @@ public class ShopProject extends JFrame {//implements MenuListener
            // panel1.add(s);
             panel1.revalidate();
             panel1.repaint();
-
             //думаю, нужно ли добавлять, чтобы панелька выходила изначальная, без изменений
-           panel2.removeAll();
-           addButton(new MainFrame(), new Pens(), new Pencil(),
+
+           /*addButton(new MainFrame(), new Pens(), new Pencil(),
                    new Ruler(), new Backpack(), new Notebooks(),
                    new Paints(), new Paper(), new Glue(),
                    new ForChildren(), new Others(), new Discounts());//функция добавления кнопок на panel2*/
