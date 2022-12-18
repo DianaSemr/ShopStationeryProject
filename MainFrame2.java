@@ -38,12 +38,24 @@ public class MainFrame2 extends Stationery {
         if(Objects.equals(string, "0"))
         {
             this.setBackground(new Color(0xF7F7FC));
+            setLayout(null);
+            JPanel p1 = new JPanel();
+            p1.setSize(1000, 350);
+            p1.setLocation(1,1);
+            add(p1);
+            JPanel p2 = new JPanel();
+            p2.setSize(1000, 350);
+            p2.setLocation(1, 350);
+            add(p2);
+            p1.setLayout(new BorderLayout());
             try {
                 URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
                 BufferedImage img = ImageIO.read(url);
                 Image scaleImage = img.getScaledInstance(1000, 350,Image.SCALE_DEFAULT);
                 JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
-                add(picLabel);
+                picLabel.setLocation(15,1);
+                p1.add(picLabel);
+                p2.setBackground(Color.WHITE);
                 Font newFont = new Font("Serif", Font.ITALIC, 23);
                 setFont(newFont);
                 String []s2 = new String[7];
@@ -57,7 +69,7 @@ public class MainFrame2 extends Stationery {
                     JLabel d = new JLabel(s2[i]);
                     d.setLocation(15, 420 + 10 * i);
                     d.setFont(newFont);
-                    add(d);
+                    p2.add(d);
                 }
             }catch (Exception ex) {
                 ex.printStackTrace();
@@ -73,36 +85,33 @@ public class MainFrame2 extends Stationery {
         }
         else if(Objects.equals(string, "2"))
         {
-            LayoutManager overlay = new OverlayLayout(this);
-            setLayout(overlay);
 
+            setLayout(null);
+            JPanel p1 = new JPanel();
+            p1.setLayout(new BorderLayout());
+            p1.setSize(900, 350);
+            p1.setLocation(65, 0);
+            JPanel p2 = new JPanel();
+            //p2.setBackground(Color.BLACK);
+            p2.setSize(1030, 350);
+            p2.setLocation(0,350);
+            add(p1);
+            add(p2);
             Font newFont = new Font("Serif", Font.BOLD, 23);
             JLabel s = new JLabel("Новинка в магазине!");
             s.setFont(newFont);
-            s.setLocation(100, 70);
-            add(s);
-            //s.setAlignmentX(0.1f);
-            //s.setAlignmentY(0.1f);
+            s.setLocation(5, 5);
+            p2.add(s);
             JLabel s2 = new JLabel("Теперь можно приобрести краски для граффити");
             s2.setFont(newFont);
-            s.setPreferredSize(new Dimension(550, 350));
-            //s2.setLocation(500, 470);
-            add(s2);
-            s2.setAlignmentX(0.1f);
-            s2.setAlignmentY(0.1f);
+            s2.setLocation(5, 20);
+            p2.add(s2);
             URL url2 = new URL("https://mir-s3-cdn-cf.behance.net/projects/original/fda7bb108401265.Y3JvcCwxNDA2LDExMDAsNDU5LDA.jpg");
             BufferedImage img = ImageIO.read(url2);
-            Image scaleImage = img.getScaledInstance(1025, 580,Image.SCALE_DEFAULT);
+            Image scaleImage = img.getScaledInstance(900, 350,Image.SCALE_DEFAULT);
             JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
-            add(picLabel);
-            picLabel.setAlignmentX(0.1f);
-            picLabel.setAlignmentY(0.1f);
-            /*JLabel label_text = new JLabel();
-            label_text.setPreferredSize(new Dimension(550, 350));
-            label_text.setHorizontalAlignment(JLabel.LEFT);
-            label_text.setText(text);
-            Font newFont2 = new Font("Serif", Font.PLAIN, 20);
-            label_text.setFont(newFont2);*/
+            p1.add(picLabel);
+
         }
         else if(Objects.equals(string, "3"))
         {
