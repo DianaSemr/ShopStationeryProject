@@ -105,14 +105,14 @@ public class BasicDisc extends JPanel implements ActionListener {
 
     class Text extends JPanel{
         Text(String text){
-            setBackground(new Color(253, 251, 251));
+            setBackground(new Color(250, 219, 219));
 
             JPanel panel_for_text = new JPanel();
-            panel_for_text.setBackground(new Color(253, 251, 251));
-            panel_for_text.setPreferredSize(new Dimension(350, 350));
+            panel_for_text.setBackground(new Color(250, 219, 219));
+            panel_for_text.setPreferredSize(new Dimension(550, 350));
 
             JLabel label_text = new JLabel();
-            label_text.setPreferredSize(new Dimension(350, 350));
+            label_text.setPreferredSize(new Dimension(550, 350));
             label_text.setHorizontalAlignment(JLabel.LEFT);
             label_text.setText(text);
             Font newFont = new Font("Serif", Font.PLAIN, 20);

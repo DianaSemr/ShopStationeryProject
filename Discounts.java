@@ -44,20 +44,15 @@ public class Discounts extends Stationery {
 
         GridLayout grid = new GridLayout(6, 1, 50, 50);    //  панелька-табличка
         panel.setLayout(grid);
-        BasicDisc panel1 = new BasicDisc(650, 400, "https://izhevsk.ru/forums/icons/forum_pictures/asyncupload/50324/2017/7/11/1499800215U50324TOPE4309692630_orig.jpg", "27", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Длина сменного стержня — 140 мм.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Эргономичная зона захвата — рифление.</p>"+"</html>");
-        BasicDisc panel2 = new BasicDisc(650, 400, "https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png", "15", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-        BasicDisc panel3 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/143227/7a7077ea65b238f4b7670c01475b5084_l.jpg", "30", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-        BasicDisc panel4 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/143562/57c62c06436dd03ca0e12cf59279bde6_l.jpg", "17", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-        BasicDisc panel5 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/143444/c4963ab41f85604e9d22eb59c1d907ed_l.jpg", "49", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-        BasicDisc panel6 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/140053/b2b00dd3f6af3827c2aaba0789a8c189_l.jpg", "24","<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-
+        BasicDisc panel1 = new BasicDisc(850, 400, "https://izhevsk.ru/forums/icons/forum_pictures/asyncupload/50324/2017/7/11/1499800215U50324TOPE4309692630_orig.jpg", "27", "<html>"+"<p>Собираемся в новом году в школу вместе</p>"+ "<p>С 15 декабря по 15 января различные канцелярские товары для школы со скидкой 30%.</p>"+"</html>");
+        BasicDisc panel2 = new BasicDisc(850, 400, "https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png", "15", "<html>"+"<p>В Новый год происходит много чудес:</p>"+ "<p>даже цены замерли в ожидании волшебства.</p>"+"<p>Скорее забирайте под ёлку яркие краски, забавные игрушки и праздничные украшения.</p>"+"</html>");
+        BasicDisc panel3 = new BasicDisc(850, 400, "https://mir-s3-cdn-cf.behance.net/projects/original/fda7bb108401265.Y3JvcCwxNDA2LDExMDAsNDU5LDA.jpg", "30", "<html>"+"<p>Новинка</p>"+ "<p>Теперь можно приобрести краску для дверей, стен, потолка и т.д.</p>"+"Скидка 10% на весь ассортимент!</p>"+"</html>");
+        BasicDisc panel4 = new BasicDisc(850, 400, "http://brikcentr.ru/public/upload/news/2020/2-banner.jpg", "17", "<html>"+"<p>Акция: Карандаш в подарок!</p>"+ "<p>В акции учавствуют шариковая автоматическая ручка Penac X-ball (0,7мм синяя) и шариковая автоматическая ручка Penac Soft Glider (1.6мм синяя) с японсикм механизмом.</p>"+"<p>Чернила на масляной основе!</p>"+"</html>");
 
         panel.add(panel1);
         panel.add(panel2);
         panel.add(panel3);
         panel.add(panel4);
-        panel.add(panel5);
-        panel.add(panel6);
 
         /*for (int i = 0; i < 6; i++) {
             JPanel picture = new JPanel();    //  одна клеточка

@@ -85,17 +85,24 @@ public class MainFrame2 extends Stationery {
             //s.setAlignmentY(0.1f);
             JLabel s2 = new JLabel("Теперь можно приобрести краски для граффити");
             s2.setFont(newFont);
+            s.setPreferredSize(new Dimension(550, 350));
             //s2.setLocation(500, 470);
             add(s2);
             s2.setAlignmentX(0.1f);
             s2.setAlignmentY(0.1f);
-            URL url2 = new URL("https://catherineasquithgallery.com/uploads/posts/2021-02/1614534916_179-p-kraski-na-belom-fone-237.jpg");
+            URL url2 = new URL("https://mir-s3-cdn-cf.behance.net/projects/original/fda7bb108401265.Y3JvcCwxNDA2LDExMDAsNDU5LDA.jpg");
             BufferedImage img = ImageIO.read(url2);
             Image scaleImage = img.getScaledInstance(1025, 580,Image.SCALE_DEFAULT);
             JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
             add(picLabel);
             picLabel.setAlignmentX(0.1f);
             picLabel.setAlignmentY(0.1f);
+            /*JLabel label_text = new JLabel();
+            label_text.setPreferredSize(new Dimension(550, 350));
+            label_text.setHorizontalAlignment(JLabel.LEFT);
+            label_text.setText(text);
+            Font newFont2 = new Font("Serif", Font.PLAIN, 20);
+            label_text.setFont(newFont2);*/
         }
         else if(Objects.equals(string, "3"))
         {

@@ -73,7 +73,7 @@ public class MainFrame extends Stationery {
             JButton button5 = new JButton();// Добавляю кнопку для "акций"
             button5.setSize(350, 150);
             button5.setLocation(635 , 385);
-            URL url5 = new URL("https://phonoteka.org/uploads/posts/2022-02/1645065005_1-phonoteka-org-p-myagko-rozovii-fon-1.jpg");
+            URL url5 = new URL("https://izhevsk.ru/forums/icons/forum_pictures/asyncupload/50324/2017/7/11/1499800215U50324TOPE4309692630_orig.jpg");
             BufferedImage img7 = ImageIO.read(url5);
             Image scaleImage5 = img7.getScaledInstance(350, 150,Image.SCALE_DEFAULT);
             button5.setIcon(new ImageIcon(scaleImage5));
