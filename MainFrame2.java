@@ -97,6 +97,11 @@ public class MainFrame2 extends Stationery {
             picLabel.setAlignmentX(0.1f);
             picLabel.setAlignmentY(0.1f);
         }
+        else if(Objects.equals(string, "3"))
+        {
+            setLayout(new BorderLayout());
+            add(new Discounts());
+        }
     }
 
     @Override

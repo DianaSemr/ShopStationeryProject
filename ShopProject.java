@@ -9,7 +9,7 @@ public class ShopProject extends JFrame {//implements MenuListener
     private JPanel panel1; //меняющаяся панель в центре
     private final JPanel panel2; // панель для кнопок сверху
     MainFrame MF = new MainFrame();
-
+    JButton button;
     JPanel panel3; //панель слева(поля)
     public ShopProject() throws IOException {
         super("Shop");
@@ -62,7 +62,15 @@ public class ShopProject extends JFrame {//implements MenuListener
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         MF = new MainFrame();
-        addButton(MF, new Pens(), new Pencil(),
+        button = new JButton(MF.getButtonName());//создаем кнопку, метод getButtonName() возвращает имя типа устанавливаемой панельки
+        button.setSize(90, 35);//задаем размеры кнопки
+        button.setLocation(10, 0);//задаем местоположение кнопки
+        button.setBorderPainted(false);//убираем очертания кнопки
+        button.setContentAreaFilled(false);//убираем заливку кнопки
+        button.setFocusPainted(false);//убираем фокус на кнопке
+        panel2.add(button);//добавляем кнопку на панельку
+        button.addActionListener(new Action2(MF));
+        addButton(new Pens(), new Pencil(),
                 new Ruler(), new Backpack(), new Notebooks(),
                 new Paints(), new Paper(), new Glue(),
                 new ForChildren(), new Others(), new Discounts());//функция добавления кнопок на panel2
@@ -76,16 +84,16 @@ public class ShopProject extends JFrame {//implements MenuListener
     }
 
     private void addButton(Stationery...k) {//функция добавления кнопок на panel2
-        int l =  0;//номер устанавливаемой в данный момент кнопки
+        int l =  1;//номер устанавливаемой в данный момент кнопки
         for (Stationery st : k) {//для разных видов панелек типа Stationery
-            JButton button = new JButton(st.getButtonName());//создаем кнопку, метод getButtonName() возвращает имя типа устанавливаемой панельки
-            button.setSize(90, 35);//задаем размеры кнопки
-            button.setLocation(l * 100 + 10, 0);//задаем местоположение кнопки
-            button.setBorderPainted(false);//убираем очертания кнопки
-            button.setContentAreaFilled(false);//убираем заливку кнопки
-            button.setFocusPainted(false);//убираем фокус на кнопке
-            panel2.add(button);//добавляем кнопку на панельку
-            button.addActionListener(new Action2(st));//добавляем действие
+            JButton button1 = new JButton(st.getButtonName());//создаем кнопку, метод getButtonName() возвращает имя типа устанавливаемой панельки
+            button1.setSize(90, 35);//задаем размеры кнопки
+            button1.setLocation(l * 100 + 10, 0);//задаем местоположение кнопки
+            button1.setBorderPainted(false);//убираем очертания кнопки
+            button1.setContentAreaFilled(false);//убираем заливку кнопки
+            button1.setFocusPainted(false);//убираем фокус на кнопке
+            panel2.add(button1);//добавляем кнопку на панельку
+            button1.addActionListener(new Action2(st));//добавляем действие
             l += 1;//переходим к следующей кнопке
         }
     }
@@ -100,6 +108,19 @@ public class ShopProject extends JFrame {//implements MenuListener
 
        @Override
        public void actionPerformed(ActionEvent e) {
+            if(s.getClass() == MainFrame.class) {
+                panel2.remove(button);
+                MF = new MainFrame();
+                button = new JButton(MF.getButtonName());//создаем кнопку, метод getButtonName() возвращает имя типа устанавливаемой панельки
+                button.setSize(90, 35);//задаем размеры кнопки
+                button.setLocation(10, 0);//задаем местоположение кнопки
+                button.setBorderPainted(false);//убираем очертания кнопки
+                button.setContentAreaFilled(false);//убираем заливку кнопки
+                button.setFocusPainted(false);//убираем фокус на кнопке
+                panel2.add(button);//добавляем кнопку на панельку
+                button.addActionListener(new Action2(MF));
+            }
+
             panel1.removeAll();//очищаем panel1
             panel1.setLayout(new BorderLayout());
             JScrollPane pane = new JScrollPane(s);//создаем scrollPane и добавляем на нее новую панельку(страничку)
