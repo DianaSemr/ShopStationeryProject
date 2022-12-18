@@ -1,63 +1,54 @@
 package ITProject;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
-public class Buttons extends JPanel{
-    JMenu MainFrame = new JMenu("Главная");
-    JMenu Pens = new JMenu("Ручки");
-    JMenu Pencil = new JMenu("Карандаши");
-    JMenu Ruler = new JMenu("Линейки");
-    JMenu Backpack = new JMenu("Портфели");
-    JMenu Notebooks = new JMenu("Тетради");
-    JMenu Paints = new JMenu("Краски");
-    JMenu Paper = new JMenu("Бумага");
-    JMenu Glue = new JMenu("Клей");
-    JMenu ForChildren = new JMenu("Для детей");
-    JMenu Others = new JMenu("Разное");
-    JMenu Discounts = new JMenu("Акции");
+public class Buttons extends Stationery{
 
+    public Buttons(String url, String str){
 
+        //setPreferredSize(new Dimension(1025, 800));
 
-    public Buttons(int width, int height, ShopProject frame){
+        setLayout(null);
 
-        setPreferredSize(new Dimension(width, 200));
-        setBackground(new Color(25, 47, 90));
-        JMenuBar menu = new JMenuBar();
+        /*JPanel panel_for_picture = new JPanel();
+        panel_for_picture.setOpaque(false);
+        panel_for_picture.setBounds(50, 50, 500, 500);
 
-        menu.setMaximumSize(new Dimension(width, 200));
-/*
-        // связываем кнопки с обработчиком
-        MainFrame.addMenuListener(frame);
-        Pens.addMenuListener(frame);
-        Pencil.addMenuListener(frame);
-        Ruler.addMenuListener(frame);
-        Backpack.addMenuListener(frame);
-        Notebooks.addMenuListener(frame);
-        Paints.addMenuListener(frame);
-        Glue.addMenuListener(frame);
-        ForChildren.addMenuListener(frame);
-        Others.addMenuListener(frame);
-        Discounts.addMenuListener(frame);
+        try {
+            URL u = new URL(url);
+            BufferedImage img = ImageIO.read(u);
+            Image scaleImage = img.getScaledInstance(350, 350,Image.SCALE_DEFAULT);
+            JLabel picture = new JLabel(new ImageIcon(scaleImage));
+            panel_for_picture.add(picture);
+            add(panel_for_picture);
 
-        menu.add(MainFrame);
-        menu.add(Pens);
-        menu.add(Pencil);
-        menu.add(Ruler);
-        menu.add(Backpack);
-        menu.add(Notebooks);
-        menu.add(Paints);
-        menu.add(Paper);
-        menu.add(Glue);
-        menu.add(ForChildren);
-        menu.add(Others);
-        menu.add(Discounts);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }*/
 
-        menu.setBackground(new Color(144, 206, 134));
-        add(menu);
-        setVisible(true);
+        JPanel panel_for_text = new JPanel();
+        panel_for_text.setBackground(new Color(0,0,0));
+        JLabel text = new JLabel();
+        text.setText(str);
+        Font newFont = new Font("Serif", Font.PLAIN, 25);
+        text.setFont(newFont);
+        panel_for_text.add(text);
+
+        add(panel_for_text);
+    }
+
+    @Override
+    protected void paintStationery(Graphics g) {
 
     }
-    */
 
-}}
+    @Override
+    public String getButtonName() {
+        return null;
+    }
+}
