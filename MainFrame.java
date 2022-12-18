@@ -20,21 +20,21 @@ public class MainFrame extends Stationery {
         this.setBackground(new Color(0xF7F7FC));
         try {
             //Создание первой кнопки, два варианта: через url и через файлы
-            File input = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");//определяю файл
-            BufferedImage img3 = ImageIO.read(input);//загружаю картинку
+            //File input = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");//определяю файл
+            //BufferedImage img3 = ImageIO.read(input);//загружаю картинку
             JButton button = new JButton();// создаю кнопку
             button.setSize(750, 350);//задаю размер
             button.setLocation(15 , 10);//задаю местоположение
             //через URL
-            //URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
-            //BufferedImage img = ImageIO.read(url);
-            Image scaleImage = img3.getScaledInstance(750, 350,Image.SCALE_DEFAULT);//задаю размеры изображения
+            URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
+            BufferedImage img = ImageIO.read(url);
+            Image scaleImage = img.getScaledInstance(750, 350,Image.SCALE_DEFAULT);//задаю размеры изображения
             button.setIcon(new ImageIcon(scaleImage));//устанавливаю картинку на кнопку
             add(button);//добавляю кнопку
             button.addActionListener(new Action2(new MainFrame2("0")));//добавляю действие к кнопке
 
-            File input2 = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame2.jpg");
-            BufferedImage img4 = ImageIO.read(input2);
+            //File input2 = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame2.jpg");
+            //BufferedImage img4 = ImageIO.read(input2);
             JButton button2 = new JButton();
             button2.setSize(235, 350);
             button2.setLocation(775 , 10);
@@ -46,13 +46,13 @@ public class MainFrame extends Stationery {
             button2.addActionListener(new Action2(new MainFrame2("1")));
 
 
-            File input3 = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");
-            BufferedImage img = ImageIO.read(input3);
+            //File input3 = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");
+            //BufferedImage img = ImageIO.read(input3);
             JButton button3 = new JButton();// Добавляю кнопку для "акций"
             button3.setSize(300, 150);
             button3.setLocation(15 , 385);
-            URL url = new URL("https://avatars.mds.yandex.net/i?id=7ec3f491fa15ced2406e3db8e056caebe4d93ec8-6332308-images-thumbs&n=13");
-            BufferedImage img5 = ImageIO.read(url);
+            URL url3 = new URL("https://avatars.mds.yandex.net/i?id=7ec3f491fa15ced2406e3db8e056caebe4d93ec8-6332308-images-thumbs&n=13");
+            BufferedImage img5 = ImageIO.read(url3);
             Image scaleImage4 = img5.getScaledInstance(300, 150,Image.SCALE_DEFAULT);
             button3.setIcon(new ImageIcon(scaleImage4));
             add(button3);
