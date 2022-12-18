@@ -11,7 +11,7 @@ public class Discounts extends Stationery {
 
         JPanel all = new JPanel();   // общая панель
         all.setLayout(new BoxLayout(all, BoxLayout.Y_AXIS));
-        setBackground(new Color(171, 236, 243));
+        setBackground(new Color(203, 236, 239));
         setPreferredSize(new Dimension(getWidth(), 2000));
 
         Animation animation = new Animation(0, 0, "https://semyaivera.ru/wp-content/uploads/2016/01/Girlyanda-zhivaya.gif");
@@ -19,7 +19,7 @@ public class Discounts extends Stationery {
 
         JPanel panel_for_name = new JPanel(new FlowLayout(FlowLayout.CENTER));    // панелька для названя
         JLabel name = new JLabel();       // лейбл название
-        name.setText("Ручки");
+        name.setText("Акции");
         Font newFont = new Font("Serif", Font.ITALIC, 70);
         name.setFont(newFont);
 
@@ -44,8 +44,8 @@ public class Discounts extends Stationery {
 
         GridLayout grid = new GridLayout(6, 1, 50, 50);    //  панелька-табличка
         panel.setLayout(grid);
-        BasicDisc panel1 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/143300/c2da6b873cd8ca8a27e3359076dc8b83_xl.jpg", "27", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Длина сменного стержня — 140 мм.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Эргономичная зона захвата — рифление.</p>"+"</html>");
-        BasicDisc panel2 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/140057/82f81d9873f12ab4f1203a4e745989b3_l.jpg", "15", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
+        BasicDisc panel1 = new BasicDisc(650, 400, "https://izhevsk.ru/forums/icons/forum_pictures/asyncupload/50324/2017/7/11/1499800215U50324TOPE4309692630_orig.jpg", "27", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Длина сменного стержня — 140 мм.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Эргономичная зона захвата — рифление.</p>"+"</html>");
+        BasicDisc panel2 = new BasicDisc(650, 400, "https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png", "15", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
         BasicDisc panel3 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/143227/7a7077ea65b238f4b7670c01475b5084_l.jpg", "30", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
         BasicDisc panel4 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/143562/57c62c06436dd03ca0e12cf59279bde6_l.jpg", "17", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
         BasicDisc panel5 = new BasicDisc(650, 400, "https://s3.ibta.ru/goods/143444/c4963ab41f85604e9d22eb59c1d907ed_l.jpg", "49", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");

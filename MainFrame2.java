@@ -39,8 +39,8 @@ public class MainFrame2 extends Stationery {
         {
             this.setBackground(new Color(0xF7F7FC));
             try {
-                File input = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");
-                BufferedImage img = ImageIO.read(input);
+                URL url = new URL("https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png");
+                BufferedImage img = ImageIO.read(url);
                 Image scaleImage = img.getScaledInstance(1000, 350,Image.SCALE_DEFAULT);
                 JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
                 add(picLabel);

@@ -22,15 +22,9 @@ public class ShopProject extends JFrame {//implements MenuListener
         double width = getWidth();
         double height = getHeight();
 
-
-        //panel1.setSize(getWidth(), 500);
-        //panel1.setLocation(0, 0);
-        //panel2.setSize(100, getHeight() - 500);
-        //panel2.setLocation(0, 500);
         setSize(1500, 800);
-        //panel1 = new JPanel();
+
         panel1.setLayout(null);
-        //panel2.setLayout(new BoxLayout(panel2, BoxLayout.X_AXIS)); /// добавила то что в скобках
         panel3 = new JPanel();
         panel3.setSize(125, 800);//задаю размер
         panel3.setLocation(0, 35);//задаю местоположение

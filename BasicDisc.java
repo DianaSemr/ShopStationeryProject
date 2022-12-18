@@ -16,7 +16,7 @@ public class BasicDisc extends JPanel implements ActionListener {
 
         all_panel.setLayout(new CardLayout(0, 0)); ///
 
-        all_panel.setPreferredSize(new Dimension(650, 345));//350 345
+        all_panel.setPreferredSize(new Dimension(950, 345));//350 345
         all_panel.setBackground(new Color(253, 251, 251));
         //JPanel Panel = new JPanel(); ///
         setPreferredSize(new Dimension(width, height));  ///
@@ -85,12 +85,12 @@ public class BasicDisc extends JPanel implements ActionListener {
             setBackground(new Color(253, 251, 251));
             JPanel panel_for_picture = new JPanel(new FlowLayout(FlowLayout.CENTER));
             panel_for_picture.setOpaque(false);
-            panel_for_picture.setPreferredSize(new Dimension(350, 350));
+            panel_for_picture.setPreferredSize(new Dimension(950, 350));
 
             try {
                 URL u = new URL(url);
                 BufferedImage img = ImageIO.read(u);
-                Image scaleImage = img.getScaledInstance(340, 340,Image.SCALE_DEFAULT);
+                Image scaleImage = img.getScaledInstance(700, 340,Image.SCALE_DEFAULT);
                 JLabel picture = new JLabel(new ImageIcon(scaleImage));
                 panel_for_picture.add(picture);
                 add(panel_for_picture); ////
