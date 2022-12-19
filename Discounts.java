@@ -78,7 +78,7 @@ public class Discounts extends Stationery {
 
     @Override
     public String getButtonName() {
-        return "Скидки";
+        return "Акции";
     }
 }
 
