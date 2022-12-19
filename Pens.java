@@ -20,10 +20,18 @@ public class Pens extends Stationery {
 
         JPanel all = new JPanel();   // общая панель
         all.setLayout(new BoxLayout(all, BoxLayout.Y_AXIS));
-        setBackground(new Color(171, 236, 243));
-        setPreferredSize(new Dimension(getWidth(), 1700));
+        //setBackground(new Color(171, 236, 243));
+        setPreferredSize(new Dimension(getWidth(), 1900));
 
-        Animation animation = new Animation(0, 0, "https://semyaivera.ru/wp-content/uploads/2016/01/Girlyanda-zhivaya.gif");
+
+        JPanel panel_for_end = new JPanel();
+        panel_for_end.setPreferredSize(new Dimension(50, 60));
+        //panel_for_end.setBackground(new Color(0,0,0));
+        panel_for_end.setOpaque(false);
+        all.add(panel_for_end);
+
+
+        Animation animation = new Animation(0, 0, "https://semyaivera.ru/wp-content/uploads/2016/01/Girlyanda-zhivaya.gif", 80);
         all.add(animation);
 
         JPanel panel_for_name = new JPanel(new FlowLayout(FlowLayout.CENTER));    // панелька для названя
@@ -39,26 +47,21 @@ public class Pens extends Stationery {
         panel_for_name.setOpaque(false);
         all.add(panel_for_name);        // добавляем панель с названием в общую панель
 
-
-        JPanel panel_for_end = new JPanel();
-        panel_for_end.setPreferredSize(new Dimension(50, 60));
-        //panel_for_end.setSize(500, 1000);
-        //panel_for_end.setBackground(new Color(0,0,0));
-        panel_for_end.setOpaque(false);
         all.add(panel_for_end);
-
 
         JPanel panel = new JPanel();       //  общая панель для картинок
         //panel.setSize(getWidth(), getHeight());
 
+        //panel.setBounds(0,0,getWidth()-100,getHeight());/////////////////////////////////
+
         GridLayout grid = new GridLayout(3, 2, 50, 50);    //  панелька-табличка
         panel.setLayout(grid);
-        Basic panel1 = new Basic(400, 400, "https://s3.ibta.ru/goods/143300/c2da6b873cd8ca8a27e3359076dc8b83_xl.jpg", "27", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Длина сменного стержня — 140 мм.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Эргономичная зона захвата — рифление.</p>"+"</html>");
-        Basic panel2 = new Basic(400, 400, "https://s3.ibta.ru/goods/140057/82f81d9873f12ab4f1203a4e745989b3_l.jpg", "15", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-        Basic panel3 = new Basic(400, 400, "https://s3.ibta.ru/goods/143227/7a7077ea65b238f4b7670c01475b5084_l.jpg", "30", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-        Basic panel4 = new Basic(400, 400, "https://s3.ibta.ru/goods/143562/57c62c06436dd03ca0e12cf59279bde6_l.jpg", "17", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-        Basic panel5 = new Basic(400, 400, "https://s3.ibta.ru/goods/143444/c4963ab41f85604e9d22eb59c1d907ed_l.jpg", "49", "<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
-        Basic panel6 = new Basic(400, 400, "https://s3.ibta.ru/goods/140053/b2b00dd3f6af3827c2aaba0789a8c189_l.jpg", "24","<html>"+"<p>Характеристики</p>"+ "<p>Цвет чернил — красный.</p>"+"<p>Серия — Ultra Orange.</p>"+"</html>");
+        Basic panel1 = new Basic(400, 400, "https://s3.ibta.ru/goods/143300/c2da6b873cd8ca8a27e3359076dc8b83_xl.jpg", "27", "<html>"+"<p><h1>Характеристики</h1></p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Длина сменного стержня — 140 мм.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Чернила на масляной основе — да.</p>"+"<p>Эргономичная зона захвата — рифление.</p>"+"<p>Цвет корпуса — прозрачный.</p>"+"<p>Форма корпуса — шестигранная.</p>"+"<p>Производитель — Китай.</p>"+"</html>");
+        Basic panel2 = new Basic(400, 400, "https://s3.ibta.ru/goods/140057/82f81d9873f12ab4f1203a4e745989b3_l.jpg", "15", "<html>"+"<p><h1>Характеристики</h1></p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Одноразовая — да.</p>"+"<p>Толщина линии письма — 0.3 мм.</p>"+"<p>Серия — Orange.</p>"+"<p>Цвет корпуса — оранжевый.</p>"+"<p>Форма корпуса — шестигранная.</p>"+"<p>Производитель — Франция.</p>"+"</html>");
+        Basic panel3 = new Basic(400, 400, "https://s3.ibta.ru/goods/143227/7a7077ea65b238f4b7670c01475b5084_l.jpg", "30", "<html>"+"<p><h1>Характеристики</h1></p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Одноразовая — да.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Цвет корпуса — синий.</p>"+"<p>Форма корпуса — шестигранная.</p>"+"<p>Производитель — Китай.</p>"+"</html>");
+        Basic panel4 = new Basic(400, 400, "https://s3.ibta.ru/goods/143562/57c62c06436dd03ca0e12cf59279bde6_l.jpg", "17", "<html>"+"<p><h1>Характеристики</h1></p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Длина сменного стержня — 140 мм.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Эргономичная зона захвата — рифление.</p>"+"<p>Цвет корпуса — оранжевый.</p>"+"<p>Форма корпуса — шестигранная.</p>"+"<p>Производитель — Китай.</p>"+"</html>");
+        Basic panel5 = new Basic(400, 400, "https://s3.ibta.ru/goods/143444/c4963ab41f85604e9d22eb59c1d907ed_l.jpg", "49", "<html>"+"<p><h1>Характеристики</h1></p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Длина сменного стержня — 140 мм.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Эргономичная зона захвата — рифление.</p>"+"<p>Цвет корпуса — прозрачный.</p>"+"<p>Форма корпуса — шестигранная.</p>"+"<p>Производитель — Китай.</p>"+"</html>");
+        Basic panel6 = new Basic(400, 400, "https://s3.ibta.ru/goods/141634/4c7616f351438e830c9062d94e34eb4d_xl.jpg", "24","<html>"+"<p><h1>Характеристики</h1></p>"+ "<p>Цвет чернил — синий.</p>"+"<p>Стиль — для офиса и учебы.</p>"+"<p>Длина сменного стержня — 140 мм.</p>"+"<p>Толщина линии письма — 0.35 мм.</p>"+"<p>Форма наконечника — игольчатый.</p>"+"<p>Эргономичная зона захвата — рифление.</p>"+"<p>Цвет корпуса — синий.</p>"+"<p>Форма корпуса — круглая.</p>"+"<p>Производитель — Китай.</p>"+"</html>");
 
 
         panel.add(panel1);
@@ -78,6 +81,11 @@ public class Pens extends Stationery {
 
         panel.setOpaque(false);
         all.add(panel);
+
+        all.add(panel_for_end);
+
+        Animation animation2 = new Animation(0, 0, "https://content.foto.my.mail.ru/mail/kasiyanenko46/_blogs/i-14877.gif", 320);
+        all.add(animation2);
 
         all.setOpaque(false);
         add(all);

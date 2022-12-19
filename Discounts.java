@@ -14,7 +14,7 @@ public class Discounts extends Stationery {
         setBackground(new Color(203, 236, 239));
         setPreferredSize(new Dimension(getWidth(), 2000));
 
-        Animation animation = new Animation(0, 0, "https://semyaivera.ru/wp-content/uploads/2016/01/Girlyanda-zhivaya.gif");
+        Animation animation = new Animation(0, 0, "https://semyaivera.ru/wp-content/uploads/2016/01/Girlyanda-zhivaya.gif", 80);
         all.add(animation);
 
         JPanel panel_for_name = new JPanel(new FlowLayout(FlowLayout.CENTER));    // панелька для названя
