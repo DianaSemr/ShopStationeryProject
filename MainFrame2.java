@@ -93,6 +93,7 @@ public class MainFrame2 extends Stationery {
             p1.setSize(900, 350);
             p1.setLocation(65, 0);
             JPanel p2 = new JPanel();
+            setBackground(new Color(250, 219, 219));
             //p2.setBackground(Color.BLACK);
             p2.setSize(1030, 350);
             p2.setLocation(0,350);
@@ -102,17 +103,24 @@ public class MainFrame2 extends Stationery {
             JLabel s = new JLabel("Новинка в магазине!");
             s.setFont(newFont);
             s.setLocation(5, 5);
-            p2.add(s);
-            JLabel s2 = new JLabel("Теперь можно приобрести краски для граффити");
+           // p2.add(s);
+            JLabel s2 = new JLabel("Теперь можно приобрести не только краски для рисования!");
+            JLabel s3 = new JLabel();
+            s3.setText("<html>"+"<p><h1>Новинка в магазине!</h></p>"+"<p>Теперь в ассортименте краски , предназначнние для покраски потолка, стен и других поверхностей</p>"+"<p>С 12 по 27 декабря скидка на весь ассортимент 10%</p>"+"<p>Успейте купить!</p>" +"<html>");
             s2.setFont(newFont);
             s2.setLocation(5, 20);
-            p2.add(s2);
+           // p2.add(s2);
+            p2.add(s3);
+            s3.setLocation(5, 35);
             URL url2 = new URL("https://northcliffe.ru/wp-content/uploads/a/a/3/aa34449c49a0683095ff722d6439db45.jpeg");
             BufferedImage img = ImageIO.read(url2);
             Image scaleImage = img.getScaledInstance(750, 350,Image.SCALE_DEFAULT);
             JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
+            picLabel.setSize(750, 350);
+            picLabel.setLocation(140, 10);
             p1.add(picLabel);
-
+            p1.setBackground(new Color(250, 219, 219));
+            p2.setBackground(new Color(250, 219, 219));
         }
         else if(Objects.equals(string, "3"))
         {

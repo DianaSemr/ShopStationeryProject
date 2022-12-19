@@ -51,13 +51,15 @@ public class MainFrame extends Stationery {
             Font newFont = new Font("Serif", Font.ITALIC, 35);
             //File input3 = new File("C:\\Users\\Диана\\IdeaProjects\\MainFrame1.png");
             //BufferedImage img = ImageIO.read(input3);
-            JButton button3 = new JButton();// Добавляю кнопку для "акций"
+            JButton button3 = new JButton("Новинки");// Добавляю кнопку для "акций"
             button3.setSize(300, 150);
+            button3.setBackground(new Color(0xF8F8CD));
             button3.setLocation(15 , 385);
-            URL url3 = new URL("https://avatars.mds.yandex.net/i?id=7ec3f491fa15ced2406e3db8e056caebe4d93ec8-6332308-images-thumbs&n=13");
-            BufferedImage img5 = ImageIO.read(url3);
-            Image scaleImage4 = img5.getScaledInstance(300, 150,Image.SCALE_DEFAULT);
-            button3.setIcon(new ImageIcon(scaleImage4));
+            button3.setFont(newFont);
+            //URL url3 = new URL("https://avatars.mds.yandex.net/i?id=7ec3f491fa15ced2406e3db8e056caebe4d93ec8-6332308-images-thumbs&n=13");
+            //BufferedImage img5 = ImageIO.read(url3);
+            //Image scaleImage4 = img5.getScaledInstance(300, 150,Image.SCALE_DEFAULT);
+            //button3.setIcon(new ImageIcon(scaleImage4));
             add(button3);
             button3.addActionListener(new Action2(new MainFrame2("2")));
 
