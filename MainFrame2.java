@@ -10,6 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Objects;
 
+
 public class MainFrame2 extends Stationery {
     MainFrame2()
     {
@@ -118,6 +119,10 @@ public class MainFrame2 extends Stationery {
             setLayout(new BorderLayout());
             add(new Discounts());
         }
+        else {
+            //NewWindow a = new NewWindow();
+            //a.setVisible(true);
+        }
     }
 
     @Override
@@ -128,5 +133,11 @@ public class MainFrame2 extends Stationery {
     @Override
     public String getButtonName() {
         return null;
+    }
+    private static class NewWindow extends JFrame
+    {
+        NewWindow() {
+            setSize(100, 100);
+        }
     }
 }

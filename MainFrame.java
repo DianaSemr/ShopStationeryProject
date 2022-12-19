@@ -1,4 +1,6 @@
 package ITProject;
+import org.w3c.dom.Text;
+
 import java.awt.Graphics;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -61,7 +63,7 @@ public class MainFrame extends Stationery {
 
             JButton button4 = new JButton();// Добавляю кнопку для "акций"
             button4.setSize(300, 150);
-            button4.setLocation(325 , 385);
+            button4.setLocation(345 , 385);
             URL url4 = new URL("https://static.tildacdn.com/tild6562-6231-4438-b837-386431663239/photo.jpg");
             BufferedImage img6 = ImageIO.read(url4);
             Image scaleImage6 = img6.getScaledInstance(300, 150,Image.SCALE_DEFAULT);
@@ -70,13 +72,12 @@ public class MainFrame extends Stationery {
             button4.addActionListener(new Action2(new MainFrame2("3")));
 
 
-            JButton button5 = new JButton();// Добавляю кнопку для "акций"
-            button5.setSize(350, 150);
-            button5.setLocation(635 , 385);
-            URL url5 = new URL("https://izhevsk.ru/forums/icons/forum_pictures/asyncupload/50324/2017/7/11/1499800215U50324TOPE4309692630_orig.jpg");
-            BufferedImage img7 = ImageIO.read(url5);
-            Image scaleImage5 = img7.getScaledInstance(350, 150,Image.SCALE_DEFAULT);
-            button5.setIcon(new ImageIcon(scaleImage5));
+            Font newFont = new Font("Serif", Font.ITALIC, 35);
+            JButton button5 = new JButton("Информация");
+            button5.setFont(newFont);
+            button5.setSize(325, 150);
+            button5.setLocation(680 , 385);
+            button5.setBackground(new Color(0xC5C5F1));
             add(button5);
             button4.addActionListener(new Action2(new MainFrame2("4")));
         } catch (Exception ex) {
