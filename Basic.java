@@ -19,10 +19,11 @@ public class Basic extends JPanel implements ActionListener {
         all_panel.setLayout(new CardLayout(0, 0)); ///
 
         all_panel.setPreferredSize(new Dimension(350, 345));
-        all_panel.setBackground(new Color(253, 251, 251));
+        all_panel.setBackground(new Color(160, 220, 246));
         //JPanel Panel = new JPanel(); ///
         setPreferredSize(new Dimension(width, height));  ///
-        setBackground(new Color(253, 251, 251));  //
+        //setBackground(new Color(253, 251, 251));  //
+        setBackground(new Color(160, 220, 246));
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); ////
 
         all_panel.add(new Picture(width, height, url, str, text));
@@ -84,7 +85,7 @@ public class Basic extends JPanel implements ActionListener {
     {
         Picture(int width, int height, String url, String str, String text)
         {
-            setBackground(new Color(253, 251, 251));
+            setBackground(new Color(160, 220, 246));
             JPanel panel_for_picture = new JPanel(new FlowLayout(FlowLayout.CENTER));
             panel_for_picture.setOpaque(false);
             panel_for_picture.setPreferredSize(new Dimension(350, 350));
@@ -107,17 +108,17 @@ public class Basic extends JPanel implements ActionListener {
 
     class Text extends JPanel{
         Text(String text){
-            setBackground(new Color(253, 251, 251));
+            setBackground(new Color(160, 220, 246));
 
             JPanel panel_for_text = new JPanel();
-            panel_for_text.setBackground(new Color(253, 251, 251));
+            panel_for_text.setBackground(new Color(160, 220, 246));
             panel_for_text.setPreferredSize(new Dimension(350, 350));
 
             JLabel label_text = new JLabel();
             label_text.setPreferredSize(new Dimension(350, 350));
             label_text.setHorizontalAlignment(JLabel.LEFT);
             label_text.setText(text);
-            Font newFont = new Font("Serif", Font.PLAIN, 20);
+            Font newFont = new Font("Serif", Font.PLAIN, 16);
             label_text.setFont(newFont);
 
             panel_for_text.add(label_text);
