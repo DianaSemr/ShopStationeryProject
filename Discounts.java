@@ -46,7 +46,7 @@ public class Discounts extends Stationery {
         panel.setLayout(grid);
         BasicDisc panel1 = new BasicDisc(850, 400, "https://izhevsk.ru/forums/icons/forum_pictures/asyncupload/50324/2017/7/11/1499800215U50324TOPE4309692630_orig.jpg", "27", "<html>"+"<p>Собираемся в новом году в школу вместе</p>"+ "<p>С 15 декабря по 15 января различные канцелярские товары для школы со скидкой 30%.</p>"+"</html>");
         BasicDisc panel2 = new BasicDisc(850, 400, "https://img.labirint.ru/images/att/news/1-18839-1513940445-9352.png", "15", "<html>"+"<p>В Новый год происходит много чудес:</p>"+ "<p>даже цены замерли в ожидании волшебства.</p>"+"<p>Скорее забирайте под ёлку яркие краски, забавные игрушки и праздничные украшения.</p>"+"</html>");
-        BasicDisc panel3 = new BasicDisc(850, 400, "https://mir-s3-cdn-cf.behance.net/projects/original/fda7bb108401265.Y3JvcCwxNDA2LDExMDAsNDU5LDA.jpg", "30", "<html>"+"<p>Новинка</p>"+ "<p>Теперь можно приобрести краску для дверей, стен, потолка и т.д.</p>"+"Скидка 10% на весь ассортимент!</p>"+"</html>");
+        BasicDisc panel3 = new BasicDisc(850, 400, "https://northcliffe.ru/wp-content/uploads/a/a/3/aa34449c49a0683095ff722d6439db45.jpeg", "30", "<html>"+"<p>Новинка</p>"+ "<p>Теперь можно приобрести краску для дверей, стен, потолка и т.д.</p>"+"Скидка 10% на весь ассортимент!</p>"+"</html>");
         BasicDisc panel4 = new BasicDisc(850, 400, "http://brikcentr.ru/public/upload/news/2020/2-banner.jpg", "17", "<html>"+"<p>Акция: Карандаш в подарок!</p>"+ "<p>В акции учавствуют шариковая автоматическая ручка Penac X-ball (0,7мм синяя) и шариковая автоматическая ручка Penac Soft Glider (1.6мм синяя) с японсикм механизмом.</p>"+"<p>Чернила на масляной основе!</p>"+"</html>");
 
         panel.add(panel1);

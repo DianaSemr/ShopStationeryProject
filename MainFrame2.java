@@ -107,9 +107,9 @@ public class MainFrame2 extends Stationery {
             s2.setFont(newFont);
             s2.setLocation(5, 20);
             p2.add(s2);
-            URL url2 = new URL("https://mir-s3-cdn-cf.behance.net/projects/original/fda7bb108401265.Y3JvcCwxNDA2LDExMDAsNDU5LDA.jpg");
+            URL url2 = new URL("https://northcliffe.ru/wp-content/uploads/a/a/3/aa34449c49a0683095ff722d6439db45.jpeg");
             BufferedImage img = ImageIO.read(url2);
-            Image scaleImage = img.getScaledInstance(900, 350,Image.SCALE_DEFAULT);
+            Image scaleImage = img.getScaledInstance(750, 350,Image.SCALE_DEFAULT);
             JLabel picLabel = new JLabel(new ImageIcon(scaleImage));
             p1.add(picLabel);
 
@@ -119,10 +119,7 @@ public class MainFrame2 extends Stationery {
             setLayout(new BorderLayout());
             add(new Discounts());
         }
-        else {
-            //NewWindow a = new NewWindow();
-            //a.setVisible(true);
-        }
+
     }
 
     @Override
@@ -133,11 +130,5 @@ public class MainFrame2 extends Stationery {
     @Override
     public String getButtonName() {
         return null;
-    }
-    private static class NewWindow extends JFrame
-    {
-        NewWindow() {
-            setSize(100, 100);
-        }
     }
 }
