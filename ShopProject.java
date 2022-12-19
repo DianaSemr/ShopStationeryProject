@@ -9,7 +9,6 @@ public class ShopProject extends JFrame {//implements MenuListener
     private JPanel panel1; //меняющаяся панель в центре
     private final JPanel panel2; // панель для кнопок сверху
     MainFrame MF = new MainFrame();
-
     JButton button;
     JPanel panel3; //панель слева(поля)
     public ShopProject() throws IOException {
