@@ -11,7 +11,7 @@ public class Discounts extends Stationery {
 
         JPanel all = new JPanel();   // общая панель
         all.setLayout(new BoxLayout(all, BoxLayout.Y_AXIS));
-        setBackground(new Color(203, 236, 239));
+        // setBackground(new Color(255, 255, 255));
         setPreferredSize(new Dimension(getWidth(), 2000));
 
         Animation animation = new Animation(0, 0, "https://semyaivera.ru/wp-content/uploads/2016/01/Girlyanda-zhivaya.gif", 80);
